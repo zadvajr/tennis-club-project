@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    Testing Page
+{% endblock %}
+
+{% block content %}
+    <h2>Members List</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Joined Date</th>
+        </tr>
+        {% for member in mymembers %}
+            <tr>
+                <td>{{ member.id }}</td>
+                <td>{{ member.firstname }}</td>
+                <td>{{ member.lastname }}</td>
+                <td>{{ member.phone }}</td>
+                <td>{{ member.joined_date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>These are members. Go back to <a href="/">home</a></p>
+{% endblock %}
